@@ -52,5 +52,6 @@ Run server
 ```
 
 ##open the localhost link after running the server and use the URLs accordingly
-```http://localhost:8080/mod4-2/
+```
+http://localhost:8080/mod4-2/
 ```
