@@ -3,7 +3,6 @@
 
 The repo contains all the programs of Django(Fullstack Development) for VTU 6th semester (21CS62).
 
-#Building and Running Locally
 
 Below are the steps for running the programs Locally
 
@@ -36,7 +35,7 @@ Create and Activate a Virtual Environment
 Install Dependencies
 
 ```bash
-  python install -r requirements.text
+  python install -r requirements.txt
 ```
 Set Up the Database
 ```bash
@@ -49,5 +48,9 @@ Create super user(optional)
 ```
 Run server
 ```bash
-  python manage.run server
+  python manage.py runserver
+```
+
+##open the localhost link after running the server and use the URLs accordingly
+```http://localhost:8080/mod4-2/
 ```
