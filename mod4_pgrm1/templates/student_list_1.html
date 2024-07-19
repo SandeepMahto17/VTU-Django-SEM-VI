@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Student List</title>
+  </head>
+  <body>
+    <h1>Students List</h1>
+    <ul>
+      {% for student in object_list  %}
+      <li>
+        <a href="{% url 'student_detail' student.pk %}">{{ student.name }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

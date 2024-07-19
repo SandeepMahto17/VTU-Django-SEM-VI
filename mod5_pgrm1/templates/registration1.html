@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Registration</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <h1>Student Registration</h1>
+    <form id="registration-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+        <label for="course">Course:</label>
+        <select id="course" name="course" required>
+            {% for course in courses %}
+            <option value="{{ course.id }}">{{ course.name }}</option>
+            {% endfor %}
+        </select><br>
+        <button type="submit">Register</button>
+    </form>
+    <div id="message"></div>
+    <script>
+        $(document).ready(function () {
+            $('#registration-form').submit(function (e) {
+                e.preventDefault();
+                $.ajax({
+                    type: 'POST', url: '{% url "register_student" %}', data: $(this).serialize(), success: function (response) {
+                        if (response.success) {
+                            $('#message').text('Registration successful!');
+                            $('#registration-form')[0].reset();
+                        } else {
+                            $('#message').text('Error: Registration failed.');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
