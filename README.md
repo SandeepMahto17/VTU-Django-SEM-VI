@@ -12,6 +12,8 @@ Below are the steps for running the programs Locally
 ## Requirements
 Python
 
+MySQL client
+
 ## Installation
 
 Install django
@@ -19,6 +21,14 @@ Install django
 ```bash
   pip install django
 ```
+* Install the MySQL client (mysqlclient).
+* Create a MySQL database using the MySQL command-line tool or a GUI tool.
+* Configure the DATABASES setting in settings.py
+
+```bash
+  pip install mysqlclient
+```
+
 ```bash
   cd ..
 ```
